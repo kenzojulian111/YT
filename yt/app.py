@@ -5,16 +5,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')  # Mengarahkan ke file HTML
+    return render_template('index.html') 
 
 @app.route('/download', methods=['POST'])
 def download():
-    url = request.form['url']  # Ambil URL dari form HTML
+    url = request.form['url']  
 
-    # Konfigurasi unduhan
     ydl_opts = {
-        'format': 'bestvideo[height=720]',  # Pilih resolusi 720p
-        'outtmpl': './Vi.mp4',             # Nama file output
+        'format': 'bestvideo[height=720]',  
+        'outtmpl': './Vi.mp4',           
     }
 
     try:
